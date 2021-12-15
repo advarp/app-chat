@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 
 import { AppApiService, ChatService } from '../services';
 import { UserModel } from '../models';
 import { FADE } from '../animations';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-messages',
@@ -44,8 +45,9 @@ import { FADE } from '../animations';
 	],
 	animations: FADE,
 })
-export class MessagesComponent implements OnInit {
+export class MessagesComponent implements OnInit, OnDestroy {
 	public activeChat: UserModel;
+	private subscription: Subscription;
 
 	constructor(
 		private apiService: AppApiService,
@@ -55,20 +57,23 @@ export class MessagesComponent implements OnInit {
 	}
 
 	public ngOnInit(): void {
-		this.chatService.userWithMessages$().subscribe(chatWithUser => {
+		this.subscription = this.chatService.userWithMessages$().subscribe(chatWithUser => {
 			this.activeChat = chatWithUser
 			this.cdr.markForCheck();
 		})
 
+		// Not need to unsubscribe case uses take(5)
 		this.apiService.fetchUserStatuses$()
 			.subscribe(statuses => {
 				if (this.activeChat) {
-					const findUpdatedStatusForUser = statuses.find(s => s.id === this.activeChat.id)?.isOnline || false;
-
-					this.activeChat.isOnline = findUpdatedStatusForUser;
+					this.activeChat.isOnline = statuses.find(s => s.id === this.activeChat.id)?.isOnline || false;
 					this.cdr.markForCheck();
 				}
 			})
+	}
+
+	public ngOnDestroy(): void {
+		this.subscription.unsubscribe();
 	}
 
 	public onSubmitMessage(event: KeyboardEvent, user: UserModel): void {
