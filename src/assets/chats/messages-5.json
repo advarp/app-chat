@@ -1,3 +1,9 @@
 {
-  "messages": []
+  "messages": [
+    {
+      "userId": "5",
+      "date": 1407386139,
+      "message": "What's up?"
+    }
+  ]
 }

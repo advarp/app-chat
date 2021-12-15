@@ -1,0 +1,14 @@
+{
+  "statuses": [
+    {
+      "id": 2,
+      "isOnline": true,
+      "picture": "https://randomuser.me/api/portraits/men/84.jpg"
+    },
+    {
+      "id": 5,
+      "isOnline": true,
+      "picture": "https://randomuser.me/api/portraits/women/65.jpg"
+    }
+  ]
+}

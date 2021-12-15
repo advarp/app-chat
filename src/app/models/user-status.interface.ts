@@ -4,6 +4,5 @@ export interface IUserStatuses {
 
 export interface IUserStatus {
 	id: number;
-	unreadMessageCount: number;
 	isOnline: boolean;
 }

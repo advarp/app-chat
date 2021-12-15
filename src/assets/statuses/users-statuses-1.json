@@ -1,17 +1,8 @@
 {
   "statuses": [
     {
-      "id": 2,
-      "unreadMessageCount": 3,
-      "isOnline": true,
-      "picture": "https://randomuser.me/api/portraits/men/84.jpg"
-    },
-    {
       "id": 5,
-      "name": "Jeanne Willis",
-      "unreadMessageCount": 1,
-      "isOnline": true,
-      "picture": "https://randomuser.me/api/portraits/women/65.jpg"
+      "isOnline": true
     }
   ]
 }
