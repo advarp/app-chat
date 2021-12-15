@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "uuid": "61f7573a-5d0b-11ec-bf63-0242ac130002",
+      "name": "Celina Lowe",
+      "unreadMessageCount": null,
+      "online": true,
+      "picture": "https://randomuser.me/api/portraits/women/37.jpg"
+    }
+  ]
+}

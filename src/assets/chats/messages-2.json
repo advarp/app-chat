@@ -1,0 +1,24 @@
+{
+  "messages": [
+    {
+      "userId": "",
+      "date": 1407386139,
+      "message": "Hi, how are?"
+    },
+    {
+      "userId": 2,
+      "date": 1407386139,
+      "message": "I'm fine, than you"
+    },
+    {
+      "userId": 2,
+      "date": 1407386139,
+      "message": "How was your weekend?"
+    },
+    {
+      "userId": 2,
+      "date": 1407386139,
+      "message": ":)"
+    }
+  ]
+}
