@@ -1,5 +1,7 @@
 # Chat
 
+![alt text](https://i.ibb.co/5G2xCbP/ezgif-7-379da58ba3.gif)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 
 ## Development server
